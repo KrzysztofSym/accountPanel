@@ -1,0 +1,253 @@
+/* Add CSS here */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+/*===== VARIABLES CSS =====*/
+
+:root {
+    --h1-fs: 2rem;    --h1-fs-media: 3rem; 
+    --h2-fs: 1.5rem;  --h2-fs-media: 2rem;
+    --h3-fs: 1.3rem;  --h3-fs-media: 1.8rem;
+    --h4-fs: 1.1rem;  --h4-fs-media: 1.5rem;
+    --p-fs: .8rem;    --p-fs-media: 1.1rem;
+    --a-fs: .7rem;    --a-fs-media: 1.1rem;
+    --li-fs: .7rem;   --li-fs-media: 1.1rem;    
+
+    --clr-bg-main: #ddf1f1;
+    --clr-bg-pri: #a9e5e7;
+    --clr-bg-sec: #f3fafa;
+    --clr-acc-main: #00bea6;
+    --clr-acc-pri: #009885;
+    --clr-acc-sec: #33cbb8;
+    --clr-acc-thi: #d80000;
+    --clr-acc-four: #ad0000;
+    --clr-acc-fif: #e03333;
+    --clr-text-main: #36454F;
+    --clr-text-pri: #36454F;  
+    
+    --shadow-color: #33cbb8;    
+    --main-ff: 'Poppins', sans-serif;
+  }
+
+/*===== BASE =====*/
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--main-ff);
+    font-size: var(--p-fs);
+    background: var(--clr-bg-main);
+    color: var(--clr-text-main);
+    width: 100%;
+    min-height: 100vh;
+}   
+
+h1, h2, h3, h4,
+p, a, li {
+    margin: 0;
+}
+
+h1 {font-size: var(--h1-fs);}
+h2 {font-size: var(--h2-fs);}
+h3 {font-size: var(--h3-fs);}
+h4 {font-size: var(--h4-fs);}
+
+p, a, li {font-size: var(--p-fs);}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--clr-text-main);
+}
+
+img {
+    max-width: 100%;
+    /* height: auto; */
+    display: block;
+}
+
+@keyframes scaleUp {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+
+    }
+}
+    /* animation: scaleUp 1s ease-in-out;
+    transform-origin: center center; */
+
+/*===== BUTTONS =====*/
+
+.btn {
+    display: inline-block;
+    background-color:  #fff;
+    color: var(--clr-text-main);
+    padding: .5rem 1.5rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    white-space: nowrap;
+    margin-bottom: 1rem;
+    transition: .2s;
+}
+  
+.btn:hover {
+    box-shadow: 0 10px 36px rgba(0, 0, 0, .15);
+}
+
+.btn:active {
+    scale: .97;
+}
+
+/*===== PROJECT CSS =====*/
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 400px;
+    background-color: var(--clr-bg-main);
+    padding: 1rem;
+    position: relative;
+    animation: scaleUp 1s ease-in-out;
+    transform-origin: center center;
+    box-shadow: 0px 8px 15px -6px var(--clr-acc-main);
+}
+
+.wrapper{
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+.wrapper i{
+    top: 50%;
+    height: 44px;
+    width: 44px;
+    color: #343F4F;
+    cursor: pointer;
+    font-size: 1.15rem;
+    position: absolute;
+    text-align: center;
+    line-height: 44px;
+    background: #fff;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.1s linear;
+  }
+  .wrapper i:active{
+    transform: translateY(-50%) scale(0.9);
+  }
+  .wrapper i:hover{
+    background: #f2f2f2;
+  }
+  .wrapper i:first-child{
+    left: -.5rem;
+    display: none;
+  }
+  .wrapper i:last-child{
+    right: -.5rem;
+  }
+  .wrapper .carousel{
+    font-size: 0px;
+    max-width: 17rem;
+    display: flex;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+  }
+  .carousel.dragging{
+    cursor: grab;
+    scroll-behavior: auto;
+  }
+  .carousel.dragging img{
+    pointer-events: none;
+  }
+  .carousel img{
+    min-height: 5rem;
+    height: 5rem;
+    min-width: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    user-select: none;
+    margin-left: 1rem;
+  }
+  .carousel img:first-child{
+    margin-left: 0px;
+  }
+  
+ul {
+    position: relative;
+    margin-top: 1rem;
+   
+}
+
+ul li {
+    padding: .5rem;
+    position: relative;
+    transition: .3s;
+    cursor: pointer;
+}
+
+ul li:before {
+    content: '';
+    display: inline-block;
+    width: .5rem;
+    height: .5rem;
+    background-color: var(--clr-acc-main);
+    border-radius: 50%;
+    margin-right: .5rem;
+    transform: scaleX(1);
+    transition: .3s;
+
+}
+
+ul li:hover:before {
+transform: scaleX(0);
+}
+
+ul li:after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    left: .5rem;
+    top: 50%;
+    width: 0;
+    height: .7rem;
+    background-color: var(--clr-acc-main);
+    border-radius: 1rem;
+    transform: translateY(-50%);
+    transition: .2s;
+}
+
+ul li:hover:after {
+transform: translateY(-50%);
+width: 38%;
+opacity: .4;
+}
+
